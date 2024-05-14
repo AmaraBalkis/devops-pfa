@@ -30,7 +30,7 @@ RUN useradd -G www-data,root -u $uid -d /home/$user $user \
 WORKDIR /var/www
 
 # Copie du contenu du répertoire de l'application existante
-COPY . .
+COPY --chown=$user:$user . .
 
 # Installation des dépendances PHP
 RUN composer install 
