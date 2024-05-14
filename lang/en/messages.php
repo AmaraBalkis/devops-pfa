@@ -1,0 +1,25 @@
+<?php
+return[
+    'deleted' => 'deleted successfully',
+    'updated' => 'updated successfully',
+    'created' => 'created successfully',
+    'erreur' => 'Something Went Wrong !',
+    'not_found' => 'Not found',
+    'unauthorized' => ':user Unauthorized',
+    'forbidden' => 'Forbidden',
+    'validation_failed' => 'Validation failed',
+    'unprocessable_entity' => 'Unprocessable entity',
+    'server_error' => 'Server error',
+    'document' =>'document ',
+    'document_type'=>'type ',
+    'shared_document'=>'shared document ',
+    'prescription_line'=>'prescription line ',
+    'exist' =>'with the same identifiers already exists !',
+    'consultation' => 'consultation ',
+    'consultation_type' => 'consultation type ',
+    'patient_record' => 'patient record ' ,
+    'waiting_room' => 'waiting room ',
+    'allergy' => 'allergy ',
+    'patient_record_allergy' => 'patient record allergy ',
+    'prescription'=>'prescription'
+];

@@ -1,0 +1,46 @@
+version: '3'
+services:
+  app:
+    build:
+      args:
+        user: lina
+        uid: 1000
+      context: .
+      dockerfile: Dockerfile
+    image: my-laravel-app
+    container_name: laravel_app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=Laravel
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_URL=http://localhost:8000
+      - DATABASE_URL=postgres://postgres.imiizftyijcdtydstlgs:pPuHx5HE29hySp9a@aws-0-eu-central-1.pooler.supabase.com:5432/postgres
+    volumes:
+      - .:/var/www
+    networks:
+      - laravel_network
+
+  db:
+    image: supabase/postgres-meta
+    container_name: supabase_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres.ckvwdowrqoqdmifqdlxb
+      - POSTGRES_PASSWORD=azerty123linabalkis
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - laravel_network
+
+networks:
+  laravel_network:
+    driver: bridge
+
+volumes:
+  pgdata:
