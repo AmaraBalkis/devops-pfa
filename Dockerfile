@@ -36,7 +36,7 @@ COPY composer.json composer.lock ./
 COPY . .
 
 # Installation des dépendances PHP
-RUN composer install --no-interaction --no-scripts --prefer-dist
+RUN composer install 
 
 # Copie du fichier .env.example pour créer le fichier .env
 COPY .env.example /var/www/.env
