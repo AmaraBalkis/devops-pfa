@@ -32,6 +32,9 @@ WORKDIR /var/www
 # Copie du fichier composer.json pour installer les dépendances PHP
 COPY composer.json composer.lock ./
 
+# Installation des dépendances PHP
+RUN composer install --no-interaction --no-scripts --prefer-dist
+
 # Copie du fichier .env.example pour créer le fichier .env
 COPY .env.example /var/www/.env
 
@@ -43,9 +46,6 @@ RUN sed -i '/^DB_PORT=/d' /var/www/.env
 RUN sed -i '/^DB_DATABASE=/d' /var/www/.env
 RUN sed -i '/^DB_USERNAME=/d' /var/www/.env
 RUN sed -i '/^DB_PASSWORD=/d' /var/www/.env
-
-# Installation des dépendances PHP
-RUN composer install 
 
 # Copie du contenu du répertoire de l'application existante
 COPY . .
