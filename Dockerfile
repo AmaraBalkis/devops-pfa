@@ -32,8 +32,20 @@ WORKDIR /var/www
 # Copie du fichier composer.json pour installer les dépendances PHP
 COPY composer.json composer.lock ./
 
+# Copie du fichier .env.example pour créer le fichier .env
+COPY .env.example /var/www/.env
+
+# Configurer le fichier .env
+RUN echo "L5_SWAGGER_CONST_HOST=http://localhost:8000/api" >> /var/www/.env
+RUN echo "DATABASE_URL=postgres://postgres.ckvwdowrqoqdmifqdlxb:azerty123linabalkis@aws-0-eu-central-1.pooler.supabase.com:5432/postgres" >> /var/www/.env
+RUN sed -i '/^DB_HOST=/d' /var/www/.env
+RUN sed -i '/^DB_PORT=/d' /var/www/.env
+RUN sed -i '/^DB_DATABASE=/d' /var/www/.env
+RUN sed -i '/^DB_USERNAME=/d' /var/www/.env
+RUN sed -i '/^DB_PASSWORD=/d' /var/www/.env
+
 # Installation des dépendances PHP
-RUN composer install --no-scripts --no-autoloader
+RUN composer install 
 
 # Copie du contenu du répertoire de l'application existante
 COPY . .

@@ -17,7 +17,7 @@ services:
       - APP_ENV=local
       - APP_DEBUG=true
       - APP_URL=http://localhost:8000
-      - DATABASE_URL=postgres://postgres.imiizftyijcdtydstlgs:pPuHx5HE29hySp9a@aws-0-eu-central-1.pooler.supabase.com:5432/postgres
+      - DATABASE_URL=postgres://postgres.ckvwdowrqoqdmifqdlxb:azerty123linabalkis@aws-0-eu-central-1.pooler.supabase.com:5432/postgres
     volumes:
       - .:/var/www
     networks:
