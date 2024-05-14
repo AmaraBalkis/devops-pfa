@@ -7,7 +7,7 @@ services:
         uid: 1000
       context: .
       dockerfile: Dockerfile
-    image: my-laravel-app
+    image: my-laravel-app1
     container_name: laravel_app
     restart: unless-stopped
     ports:
