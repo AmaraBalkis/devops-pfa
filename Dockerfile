@@ -29,9 +29,6 @@ RUN useradd -G www-data,root -u $uid -d /home/$user $user \
 # Définition du répertoire de travail
 WORKDIR /var/www
 
-# Copie du fichier composer.json pour installer les dépendances PHP
-COPY composer.json composer.lock ./
-
 # Copie du contenu du répertoire de l'application existante
 COPY . .
 
