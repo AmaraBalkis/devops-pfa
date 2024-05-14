@@ -32,6 +32,9 @@ WORKDIR /var/www
 # Copie du fichier composer.json pour installer les dépendances PHP
 COPY composer.json composer.lock ./
 
+# Copie du contenu du répertoire de l'application existante
+COPY . .
+
 # Installation des dépendances PHP
 RUN composer install --no-interaction --no-scripts --prefer-dist
 
@@ -46,9 +49,6 @@ RUN sed -i '/^DB_PORT=/d' /var/www/.env
 RUN sed -i '/^DB_DATABASE=/d' /var/www/.env
 RUN sed -i '/^DB_USERNAME=/d' /var/www/.env
 RUN sed -i '/^DB_PASSWORD=/d' /var/www/.env
-
-# Copie du contenu du répertoire de l'application existante
-COPY . .
 
 # Génération de la clé d'application Laravel
 RUN php artisan key:generate
