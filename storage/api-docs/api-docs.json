@@ -8,7 +8,7 @@
         "/api/allergie": {
             "get": {
                 "tags": [
-                    "Allergie pour une commit "
+                    "Allergie"
                 ],
                 "summary": "Get list of allergy",
                 "description": "Returns list of allergy",
