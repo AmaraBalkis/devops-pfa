@@ -8,7 +8,7 @@
         "/api/allergie": {
             "get": {
                 "tags": [
-                    "Allergie"
+                    "Allergie apres test pipline"
                 ],
                 "summary": "Get list of allergy",
                 "description": "Returns list of allergy",
