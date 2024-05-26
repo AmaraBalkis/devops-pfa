@@ -13,7 +13,7 @@ class AllergieController extends Controller
  * @OA\Get(
  *      path="/api/allergie",
  *      operationId="getallergieList",
- *      tags={"Allergie teter pour le pipine"},
+ *      tags={"Allergie apres test pipline"},
  *      summary="Get list of allergy",
  *      description="Returns list of allergy",
  *      @OA\Response(
